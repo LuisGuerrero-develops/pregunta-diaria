@@ -1,0 +1,163 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #cccccc url('assets/WhatsApp\ Image\ 2025-07-03\ at\ 2.11.19\ PM.jpeg') no-repeat fixed center top / cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    text-align: center;
+    position: relative;
+    overflow: hidden; 
+}
+
+.container {
+    max-width: 600px;
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 700;
+    color: #f8f8f8;
+    margin-bottom: 30px;
+    animation: pulse 2s infinite alternate; 
+}
+
+.tarjeta-container {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 30px 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tarjeta-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.pregunta-container p {
+    font-size: 1.2em;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.5;
+    color: #34495e;
+}
+
+.respuesta-container {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.8s ease-in-out, opacity 0.6s ease-in-out, margin-top 0.5s ease-in-out;
+    border-top: 1px solid transparent;
+
+    margin-top: 0;
+}
+
+.tarjeta-container.revelado .respuesta-container {
+    max-height: 1000px;
+    opacity: 1;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid #e0e0e0;
+}
+
+#respuesta-texto {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #16a085;
+    font-weight: 400;
+}
+
+footer {
+    margin-top: 25px;
+    font-size: 0.9em;
+    color: #eff3f3;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: scale(1); 
+        color: #f8f8f8; 
+    }
+    50% {
+        transform: scale(1.05); 
+        color: #ff69b4; 
+    }
+    100% {
+        transform: scale(1); 
+        color: #f8f8f8; 
+    }
+}
+
+
+
+.floating-image {
+    position: absolute; 
+    opacity: 0; 
+    animation: fadeAndFloat 15s ease-in-out infinite; 
+    z-index: -1; 
+    pointer-events: none; 
+}
+
+.image-1 {
+    width: 80px; 
+    top: 10%;
+    left: 5%; 
+    animation-delay: 0s; 
+    animation-duration: 12s;
+}
+
+.image-2 {
+    width: 100px;
+    top: 20%;
+    right: 10%; 
+    animation-delay: 3s; 
+    animation-duration: 15s;
+}
+
+
+.corner-gif-left, .corner-gif-right {
+    position: fixed; 
+    width: 150px;   
+    height: auto;    
+    z-index: 100;    
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+.corner-gif-left {
+    bottom: 20px;    
+    left: 20px;      
+}
+
+
+.corner-gif-right {
+    bottom: 20px;    
+    right: 20px;     
+}
+
+
+@keyframes fadeAndFloat {
+    0% {
+        transform: translate(0, 0);
+        opacity: 0; 
+    }
+    10% {
+        opacity: 0.8; 
+    }
+    50% {
+        transform: translate(30px, -50px); 
+        opacity: 0.8; 
+    }
+    90% {
+        opacity: 0; 
+    }
+    100% {
+        transform: translate(0, 0); 
+        opacity: 0; 
+    }
+}

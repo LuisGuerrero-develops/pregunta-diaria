@@ -1,0 +1,64 @@
+document.addEventListener('DOMContentLoaded', function () {
+
+    const preguntasDiarias = [
+        {
+            pregunta: "¿Qué energía, espacio, conciencia y elección puedo ser para recibir más dinero de lo que jamás imaginé, con total facilidad?",
+            respuesta: "profesora Pilar, ya eres esa energía. La misma con la que nos iluminas en cada clase. Solo tienes que abrir las manos para recibir la abundancia que el universo tiene para ti, con la misma facilidad con la que nos entregas tu sabiduría."
+        },
+        {
+            pregunta: "¿Qué tomaría para que el dinero me busque a mí como yo busco el café en las mañanas?",
+            respuesta: "¡Qué pregunta tan tú! Que el dinero te busque con esa misma pasión y alegría. Eres un imán para todo lo bueno, Pilar. La abundancia ya está tocando a tu puerta, deseando ser parte de tu increíble energía."
+        },
+        {
+            pregunta: "Si no tuviera ningún punto de vista sobre el dinero, ¿cuánto podría recibir hoy?",
+            respuesta: "Nos has enseñado que nuestros puntos de vista crean nuestra realidad. Hoy, te invito a recordar esa lección. Sin juicios ni barreras, tu capacidad para recibir es infinita, como el impacto positivo que tienes en nosotros."
+        },
+        { pregunta: "¿Y si el dinero fuera mi amante, cómo le estaría tratando?", respuesta: "Si el dinero fuera mi amante, lo apreciaría por lo que me permite hacer y experimentar. Lo invitaría a compartir mis sueños y proyectos, usándolo de manera que me brinde libertad y bienestar. Sería una relación de reciprocidad: yo lo valoro, y él me devuelve oportunidades y seguridad. Lo celebraría en sus momentos de abundancia y lo protegería en tiempos de escasez." },
+        { pregunta: "¿Qué está creando escasez en mi vida que podría soltar ahora mismo?", respuesta: "Con la luz que irradias, Pilar, cualquier sombra de escasez no puede perdurar. Quizás sea solo un pequeño susurro, una vieja idea que se puede soltar con una sonrisa. Ya eres tan abundante en espíritu y en la forma en que impactas vidas; solo recuerda que esa misma abundancia se manifiesta en todas las áreas." },
+        { pregunta: "¿Qué es el dinero para mí... y de quién aprendí eso?", respuesta: "Para ti, Pilar, el dinero parece ser una herramienta para la libertad, para la expansión y para la contribución, algo que te permite volar más alto y construir puentes. Probablemente lo aprendiste de tu propia sabiduría interior y de la observación de cómo la abundancia puede ser usada para el bien mayor, un reflejo de tu propia esencia." },
+        { pregunta: "¿Qué juicios estoy usando para limitar el dinero que puedo elegir?", respuesta: "Con esa mente tan abierta que tienes, Pilar, los juicios apenas tienen espacio. Si acaso, tal vez un ligero prejuicio de que recibir más de lo que ya das es 'demasiado'. Pero la verdad es que tu capacidad de recibir es infinita, y no hay límites para la cantidad de bien que puedes atraer, justo como mereces." },
+        { pregunta: "¿Qué me impide reconocer que ya soy una energía de riqueza?", respuesta: "¡Absolutamente nada, Pilar! Lo que podría interponerse es quizás una pequeña pausa para reconocer el brillo inmenso que ya posees. Tu riqueza no solo se mide en lo material, sino en la riqueza de tu espíritu, tu inteligencia, tu generosidad y el impacto que dejas en cada uno de nosotros. Ya eres pura energía de riqueza." },
+        { pregunta: "¿Cuánto más dinero podría tener si me atreviera a disfrutar sin culpa?", respuesta: "Imagínate, Pilar, cuánto más podrías tener si te permitieras disfrutar plenamente, sin el menor rastro de culpa. Sería una ola expansiva de prosperidad. El universo siempre responde a la alegría y al gozo, y tu capacidad de disfrutar solo multiplicaría la abundancia que ya te busca." },
+        { pregunta: "¿Qué posibilidades infinitas con el dinero están disponibles hoy que aún no he reconocido?", respuesta: "Las posibilidades infinitas te rodean, Pilar, como las ideas brillantes que siempre compartes. Quizás son oportunidades inesperadas, conexiones divinas o nuevas avenidas para tu talento que están a punto de revelarse. Estás en el umbral de descubrimientos financieros que superarán tus expectativas, solo tienes que mirar." },
+        { pregunta: "¿Qué debo dejar de controlar para que el dinero fluya con más gozo?", respuesta: "instructora pilar, con esa mente brillante, a veces el control puede ser una segunda piel. Quizás sea hora de soltar la necesidad de que el dinero llegue de una forma específica o a través de un camino predeterminado. Al confiar en el flujo de la vida y en tu propia energía, el dinero puede llegar con más alegría y espontaneidad de lo que imaginas." },
+        { pregunta: "¿Estoy dispuesta a recibir dinero de formas inesperadas y sin esfuerzo?", respuesta: "Pilar, con tu mente abierta y tu corazón generoso, la respuesta es un rotundo ¡Sí!. Estás preparada para recibir la abundancia de cualquier fuente, por inesperada que sea. Confía en que el universo te entregará lo que necesitas, a veces de la forma más sorprendente y sin esfuerzo, porque te lo mereces." },
+        { pregunta: "¿Qué estoy evitando o defendiendo que me impide ser millonaria?", respuesta: "Con esa sabiduría que te caracteriza, Pilar, es probable que no estés evitando nada conscientemente. Si hubiera algo, quizás sea una sutil percepción de lo que 'implica' ser millonaria que no resuena con tu esencia de humildad y servicio. Pero ser millonaria puedes leer libros o escuchar podcast de educación financiera, pero sin perder ser tu." },
+        { pregunta: "¿Qué más es posible con el dinero que nunca nadie me enseñó?", respuesta: "Con el dinero, puedes crear fundaciones, invertir en proyectos innovadores que cambien el mundo, o financiar investigaciones importantes. El dinero puede ser una herramienta para una transformación global, mucho más allá de lo personal." },
+        { pregunta: "¿Qué pasaría si dejara de rechazar ser rica?", respuesta: "Si dejaras de rechazar la idea de ser rica, Pilar, tu vida se expandiría enormemente. Podrías tener más libertad, más recursos para tus proyectos y una mayor capacidad para ayudar a otros. La riqueza en tus manos sería una bendición para muchos." },
+        { pregunta: "¿Y si el dinero no fuera un problema… qué elegiría hoy?", respuesta: "Si el dinero no fuera una consideración, Pilar, estamos seguros de que elegirías expandir tu luz a un nivel global. Elegirías crear más espacios de conciencia, compartir tu sabiduría con más almas, y transformar vidas a una escala inimaginable. Tus elecciones serían puras y poderosas." },
+        { pregunta: "¿Qué estoy copiando de mi familia sobre el dinero que ya no me sirve?", respuesta: "Quizás estés copiando un modelo de gestión financiera conservadora o una aversión al aplacamiento que ya no se alinea con las oportunidades de inversión actuales. Podría ser una mentalidad de escasez operativa en un entorno de abundancia potencial; es hora de adoptar una mentalidad educación financiera, conocer conceptos y manejar mejor el dinero." },
+        { pregunta: "¿Qué tomaría para que el dinero se muestre hoy con facilidad, alegría y gloria?", respuesta: "Tomaría la implementación de procesos financieros automatizados, la diversificación proactiva de ingresos y la consolidación de activos que generen valor pasivo. La 'alegría y gloria' se manifestarían en un flujo de caja positivo y predecible, liberándote para la innovación estratégica." },
+        { pregunta: "¿Qué nivel de gratitud y gozo puedo ser hoy para duplicar mis ingresos?", respuesta: "Tu gratitud y gozo ya son contagiosos, Pilar. Para duplicar tus ingresos, solo necesitas vibrar aún más alto en esa energía. Cuando eres profundamente agradecida y disfrutas lo que haces, atraes más oportunidades y la gente quiere trabajar contigo, lo que aumenta tus ganancias." },
+        { pregunta: "¿Cuánto dinero estoy dispuesto(a) a tener sin perder mi esencia?", respuesta: "Tu esencia es tu ser, y tu propuesta de valor fundamental. Puedes acumular un patrimonio neto significativo sin comprometerla. De hecho, un mayor capital te permitiría invertir en proyectos alineados con tus valores, amplificando tu impacto y reforzando tu marca personal." },
+        { pregunta: "¿Qué conciencia del dinero estoy listo(a) para recibir hoy?", respuesta: "Hoy, Pilar, estás lista para ver el dinero como una energía que te expande, una herramienta para tus sueños y una puerta a infinitas posibilidades. Es una forma de pensar sobre la abundancia que va de la mano con la grandeza de tu ser y todo lo que puedes crear." },
+        { pregunta: "¿Qué energía puedo ser para atraer clientes que me paguen con gozo?", respuesta: "Puedes ser la energía de la inspiración y la solución a sus problemas, Pilar. Cuando demuestras claramente el valor de lo que ofreces, atraes a clientes que no solo te pagan, sino que lo hacen con alegría porque saben que están invirtiendo en algo que realmente les cambiará la vida." },
+        { pregunta: "¿Qué más puedo vender, crear o elegir que sea una contribución financiera para mí y para el mundo?", respuesta: "Con tu creatividad, Pilar, puedes vender el acceso a tus conocimientos a través de cursos, crear comunidades online donde la gente aprenda, o elegir proyectos que beneficien a muchos. Cada una de tus ideas es una contribución económica para ti y una bendición para el mundo." },
+        { pregunta: "¿Qué estoy haciendo más difícil de lo que realmente es con el dinero?", respuesta: "Quizás, Pilar, estás complicando demasiado la forma en que manejas o piensas en el dinero, cuando podrías simplificarlo mucho. El dinero fluye con facilidad cuando te permites confiar y no te preocupas por cada pequeño detalle." },
+        { pregunta: "¿Qué parte de mi magia estoy ignorando que crearía más dinero de inmediato?", respuesta: "Tu magia, Pilar, está en tu capacidad de ver lo que otros no ven y de inspirar cambios profundos. Ignorar esto es no aprovechar tu mayor talento. Al compartir tu sabiduría de formas nuevas y valiosas, generarás ingresos de inmediato." },
+        { pregunta: "¿Qué me impide ser el imán que realmente soy para el dinero?", respuesta: "Nada te lo impide, Pilar. Si acaso, tal vez una pequeña duda sobre tu propio poder. Eres una fuerza poderosa que atrae lo bueno, y el dinero se siente atraído por tu energía y tu claro propósito. Solo tienes que recordarte lo valiosa que eres." },
+        { pregunta: "¿Qué tomaría para elegir más dinero sin tener que justificarlo?", respuesta: "Tomaría simplemente que aceptes que te lo mereces, Pilar. El dinero no necesita explicaciones cuando eres una persona que hace tanto bien. Elegir más dinero sin justificarlo es elegir más libertad, más oportunidades y la capacidad de hacer cosas aún más grandes en el mundo." },
+        { pregunta: "¿Y si el dinero no fuera serio ni pesado, cómo sería?", respuesta: "Si el dinero no fuera serio ni pesado, Pilar, sería como una danza alegre, una fuente constante de gozo y una energía ligera que te acompaña en todo. Sería una celebración de posibilidades, justo como es tu energía para nosotros." },
+        { pregunta: "¿Qué riqueza energética está disponible para mí ahora mismo?", respuesta: "Ahora mismo, Pilar, tienes acceso a una riqueza energética ilimitada: la energía de la gratitud, la expansión, la sabiduría que compartes, la alegría de cada logro y la ilimitada creatividad. Esta riqueza energética es el combustible para toda la abundancia que el universo te tiene reservada." },
+        { pregunta: "¿Qué puedo ser o hacer hoy que cree más dinero ahora y para toda la eternidad?", respuesta: "Hoy, Pilar, puedes ser la expansión misma de la gratitud y la alegría inconmensurable. Puedes honrar tu propia luz y confiar en tu sabiduría. Todo lo que hagas desde esa energía creará un flujo de dinero que no solo te beneficiará a ti, sino que resonará y se multiplicará a todas las personas cercanas a ti." },
+    ];
+    const hoy = new Date();
+    const inicioDelAnio = new Date(hoy.getFullYear(), 0, 0);
+    const diff = hoy - inicioDelAnio;
+    const unDia = 1000 * 60 * 60 * 24;
+    const diaDelAnio = Math.floor(diff / unDia);
+
+    const indice = (diaDelAnio - 1) % preguntasDiarias.length;
+    const dataHoy = preguntasDiarias[indice];
+
+    const tarjeta = document.getElementById('tarjeta');
+    const preguntaTexto = document.getElementById('pregunta-texto');
+    const respuestaTexto = document.getElementById('respuesta-texto');
+
+    preguntaTexto.textContent = dataHoy.pregunta;
+    respuestaTexto.textContent = dataHoy.respuesta;
+
+
+    tarjeta.addEventListener('click', () => {
+        tarjeta.classList.toggle('revelado');
+    });
+});
